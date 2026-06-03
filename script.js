@@ -7,7 +7,7 @@ const posts = document.getElementById('posts');
 const postNames = document.getElementById('names');
 
 //variable to store the url of the backend server where we will send requests to get and create posts
-const apiUrl = 'http://localhost:3000/posts';
+const apiUrl = 'https://bulletin-board-8put.onrender.com/posts';
 
 
 function displayPosts(post) {
