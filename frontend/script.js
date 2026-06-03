@@ -27,6 +27,9 @@ async function fetchPosts() {
     try {
         const response = await fetch(apiUrl);
         const savedPosts = await response.json();
+
+        console.log(savedPosts);
+        
         posts.innerHTML = '';
 
         savedPosts.forEach(function (post) {

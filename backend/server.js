@@ -26,8 +26,11 @@ const db = new Pool({
 //retrieves all posts from the database and sends them back to the frontend as a JSON response
 app.get('/posts', async (req, res) => {
     try {
-        const result = await db.query('SELECT * FROM post ORDER BY created_at DESC');
+        const result = await db.query('SELECT * FROM post ORDER BY created_at ASC');
         res.json(result.rows);
+
+        console.log('test');
+
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error getting posts' });
