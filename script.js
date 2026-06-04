@@ -44,11 +44,11 @@ async function fetchPosts() {
 
     } catch (error) {
         console.error('Error Loading posts:', error);
+
     } finally {
         loading.style.display = 'none'; //hide the loading animation after posts are loaded
     }
 }
-
 
 
 //add event listener to execute code when form is submitted 
@@ -73,6 +73,7 @@ form.addEventListener('submit', async function (event) {
         name: name
     }
 
+    //send a POST request to the backend server to create a new post with the message and name from the input fields
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
@@ -98,6 +99,7 @@ form.addEventListener('submit', async function (event) {
     } catch (error) {
         console.error('Error creating post:', error);
     }
+
 });
 
 fetchPosts();
